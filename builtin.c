@@ -4,6 +4,7 @@
  * cd - change user directory
  * @cmd: Command to check against cd
  * @path: Path to change to
+ * @env: env variable from main
  *
  * Return: void
  */
