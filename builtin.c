@@ -37,11 +37,11 @@ void cd(char *cmd, char *path)
  */
 void sigHandle(int n __attribute__((unused)))
 {
-	write(STDERR_FILENO, "\n($) ", 5);
+	write(STDERR_FILENO, "\n$ ", 3);
 }
 
 /**
- * startup
+ * startup - Simple startup function to set some variables
  * @argv: argv from main
  *
  * Return - void

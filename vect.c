@@ -3,6 +3,7 @@
 /**
  * vect - Takes a string and puts it into a vector array
  * @str: String to break apart
+ * @delim: Delimeter string
  * @n: Size to malloc
  *
  * Return: Pointer to an array of pointers

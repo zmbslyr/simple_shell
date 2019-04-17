@@ -21,7 +21,7 @@ int main(int argc __attribute__((unused)),
 	for (globals.count = 1; 1; globals.count++)
 	{
 		if (flags.interactive)
-			write(STDERR_FILENO, "($) ", 4);
+			write(STDERR_FILENO, "$ ", 2);
 		charCount = getline(&buffer, &bufSize, stdin);
 		if (charCount < 0)
 			break;
