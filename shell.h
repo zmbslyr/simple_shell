@@ -23,7 +23,7 @@ char *createPath(char **path, char *buffer, char *cmd);
 void sigHandle(int n);
 void parse(char **array, char **env);
 void error(int status);
-int nfError(int status);
+void nfError(int status);
 void cdError(int status);
 
 /* Built-ins */
@@ -32,6 +32,7 @@ void cd(char *cmd, char *path);
 void exitShell(char *buffer);
 void envBuilt(char *cmd, char **env);
 void envBuilt(char *cmd, char **env);
+void startup(char **argv);
 
 /* helper_functions */
 int _strlen(char *s);
@@ -57,6 +58,7 @@ struct global
 {
 	int count;
 	int exit;
+	int error;
 	char *name;
 	char *cmd;
 	char *arg;

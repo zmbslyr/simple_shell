@@ -41,7 +41,7 @@ void sigHandle(int n __attribute__((unused)))
 }
 
 /**
- * startup
+ * startup - Simple startup function to set some variables
  * @argv: argv from main
  *
  * Return - void
