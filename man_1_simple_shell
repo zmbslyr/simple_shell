@@ -15,8 +15,7 @@ A shell is a command-line interpreter that provides a command line user interf\
 or
 .B dash.
 .B Simple Shell
-can be used in both interactive and non-interactive mode. In interactive mode \
-  the prompt will have () around the $ sign ($).
+can be used in both interactive and non-interactive mode.
 The first argument at argument [0] is understood by the shell to be a command.\
    The shell will then run that command if it can be found and arguments after the first are treated as modifiers or options.
 
@@ -68,7 +67,6 @@ All files are to be compiled using "gcc -Wall -Werror -Wextra -pedantic *. -o\hs
 
 .SH BUGS
 
-No known bugs.
 Report bugs pertaining to the shell to https://github.com/SeckMohameth and https://github.com/zmbslyr
 .SH AUTHORS
 Mohameth Seck, Mark Hedgeland
