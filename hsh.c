@@ -136,5 +136,5 @@ void parse(char **array, char **env)
 {
 	globals.arg = array[1];
 	envBuilt(array[0], env);
-	cd(array[0], array[1]);
+	cd(array[0], array[1], env);
 }

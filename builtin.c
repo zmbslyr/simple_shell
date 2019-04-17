@@ -7,18 +7,29 @@
  *
  * Return: void
  */
-void cd(char *cmd, char *path)
+void cd(char *cmd, char *path, char **env)
 {
-	char *cd = "cd";
-	int fd;
+	char *cd = "cd", *homePoint, *home = "HOME=";
+	int fd, index, index2;
 
+	for (index = 0; env[index]; index++)
+	{
+		if (_strncmp(env[index], home, 5) == 0)
+		{
+			homePoint = env[index];
+			for (index2 = 0; index2 < 5; index2++)
+				homePoint++;
+		}
+	}
 	if (cmd == NULL || _strcmp(cmd, cd) == 0)
 	{
 		if (cmd == NULL)
 			return;
 		if (path == NULL && cmd != NULL)
 		{
-			fd = chdir(getenv("HOME"));
+			fd = chdir(homePoint);
+			if (fd < 0)
+				return;
 		}
 		else if (cmd != NULL)
 		{
