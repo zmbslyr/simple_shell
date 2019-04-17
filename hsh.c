@@ -16,12 +16,8 @@ int main(int argc __attribute__((unused)),
 	size_t bufSize = 0;
 	ssize_t charCount;
 	char **array = NULL;
-	/* make startup function */
-	globals.name = argv[0];
-	signal(SIGINT, sigHandle);
-	if (isatty(STDOUT_FILENO) == 1 && isatty(STDIN_FILENO) == 1)
-		flags.interactive = 1;
-	/* make startup function */
+
+	startup(argv);
 	for (globals.count = 1; 1; globals.count++)
 	{
 		if (flags.interactive)
@@ -67,19 +63,21 @@ int main(int argc __attribute__((unused)),
 void newProcess(char *pathExec, char **args, char **env)
 {
 	pid_t newProcess;
-	int status;
 
 	newProcess = fork();
 	if (newProcess < 0)
-		nfError(-1);
+		perror(args[0]);
 	if (newProcess == 0)
 	{
 		execve(pathExec, args, env);
-		nfError(-1);
-		exit(2);
+		nfError(errno);
+		exit(globals.exit);
 	}
 	else
-		wait(&status);
+	{
+		wait(&globals.exit);
+		globals.exit = WEXITSTATUS(globals.exit);
+	}
 }
 /**
  * builtins - checks if cmd is a built-in
