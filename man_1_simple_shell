@@ -1,0 +1,74 @@
+.TH man 1 "17 April 2019" "Simple Shell"
+.SH NAME
+ hsh \- Holberton Simple Shell command interpreter (shell)
+.SH SYNOPSIS
+.B ./hsh
+ \fb\ \fI[command]\fR [arguments ...]
+.SH DESCRIPTION
+ The \fB\ hsh \fR (Simple Shell) is an end of the trimester project for student\
+  s at Holberton School of Software Engineering. The objective is to write a simple UNIX command interpreter
+
+.SH Overview
+A shell is a command-line interpreter that provides a command line user interf\
+  ace. The shell we built is a simplified iteration of a command line similar to
+.B bash
+or
+.B dash.
+.B Simple Shell
+can be used in both interactive and non-interactive mode. In interactive mode \
+  the prompt will have () around the $ sign ($).
+The first argument at argument [0] is understood by the shell to be a command.\
+   The shell will then run that command if it can be found and arguments after the first are treated as modifiers or options.
+
+.SH Built-ins
+We implemented the following builtins (commands) into our hsh Shell:
+.TP
+.B -cd
+changes current directory of the process. syntax:
+.B cd [DIRECTORY]
+.TP
+
+.B -exit
+to exit from the shell you type
+.B exit
+and press
+.B ENTER.
+
+.TP
+.B -env
+Prints the current enviornment
+
+.SH USAGE / COMPILATION
+All files are to be compiled using "gcc -Wall -Werror -Wextra -pedantic *. -o\hsh"
+
+.I builtin.c
+- Contains the following built-ins for the shell:
+.B freeArray, cd, exit, signal handle for control c
+
+.I hsh.c
+- Simple Shell
+
+.I helper_functions.c
+- Contains all helper functions for simple shell:
+.B _strlen, _strncpy, _strcmp, _strcpy
+
+.I path.c
+- Finds the string in **env that contains the path
+
+.I vect.c
+- Takes a string and puts it into a vector array
+
+.I shell.h
+- Contains all prototypes for base functions, built-ins, and global variables
+
+
+
+.SH SEE ALSO
+.I sh(1)
+
+.SH BUGS
+
+No known bugs.
+Report bugs pertaining to the shell to https://github.com/SeckMohameth and https://github.com/zmbslyr
+.SH AUTHORS
+Mohameth Seck, Mark Hedgeland
