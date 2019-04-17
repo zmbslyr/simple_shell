@@ -48,6 +48,7 @@ int _putchar(char c);
  * struct global - GLobal values
  * @count: global line count
  * @exit: Global exit status
+ * @error: Global errno status
  * @name: Program name
  * @cmd: Command
  * @arg: First argument
