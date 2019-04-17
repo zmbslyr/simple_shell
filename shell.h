@@ -28,7 +28,7 @@ void cdError(int status);
 
 /* Built-ins */
 int builtins(char *cmd);
-void cd(char *cmd, char *path);
+void cd(char *cmd, char *path, char **env);
 void exitShell(char *buffer);
 void envBuilt(char *cmd, char **env);
 void envBuilt(char *cmd, char **env);
@@ -48,6 +48,7 @@ int _putchar(char c);
  * struct global - GLobal values
  * @count: global line count
  * @exit: Global exit status
+ * @error: Global errno status
  * @name: Program name
  * @cmd: Command
  * @arg: First argument
