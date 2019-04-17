@@ -106,7 +106,7 @@ char *createPath(char **path, char *buffer, char *cmd)
 
 	for (index = 1; path[index] != NULL; index++)
 	{
-		buffer = malloc(strlen(path[index]) + _strlen(cmd) + 2);
+		buffer = malloc(_strlen(path[index]) + _strlen(cmd) + 2);
 		if (buffer == NULL)
 			return (NULL);
 		strncpy(buffer, path[index], _strlen(path[index]) + 1);
