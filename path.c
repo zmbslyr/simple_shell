@@ -109,7 +109,7 @@ char *createPath(char **path, char *buffer, char *cmd)
 		buffer = malloc(_strlen(path[index]) + _strlen(cmd) + 2);
 		if (buffer == NULL)
 			return (NULL);
-		strncpy(buffer, path[index], _strlen(path[index]) + 1);
+		_strncpy(buffer, path[index], _strlen(path[index]) + 1);
 		apndCmd(buffer, cmd);
 		if (stat(buffer, &fileStat) == 0)
 		{
