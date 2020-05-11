@@ -80,5 +80,6 @@ Article from medium blog post [What happens when you type ls -l in shell](https:
 
 ## Authors
 Contributors to the Holberton Shell project
- - [Mark Hedgeland](https://github.com/zmbslyr/)
+ - [Mark Hedgeland](https://github.com/zmbslyr/)  
+   [Twitter](https://twitter.com/markhedgeland) [LinkedIn](https://linkedin.com/in/markhedgeland) [Personal Site](http://markhedgeland.tech)
  - [Mohameth Seck](https://github.com/SeckMohameth/)
